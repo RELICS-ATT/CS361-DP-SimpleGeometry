@@ -13,8 +13,16 @@ namespace GeometryLib.Shapes
     public class RightAngledTriangle : Triangle
     {
         public RightAngledTriangle(double side1, double side2) 
-            : base(side1, side2, Math.Sqrt(side1 * side1 + side2 * side2))
+            : base(side1, side2, Math.Sqrt(side1 * side1 + side2 * side2)) {}
+
+        public override string Print()
         {
+            double area = 0;
+            area = 0.5 * Side1 * Side2;
+            var info = "Right-angled Triangle: ";
+            info += $"sides {Side1} {Side2} {Side3}, ";
+            info += $"area = {area}";
+            return info;
         }
     }
 }
