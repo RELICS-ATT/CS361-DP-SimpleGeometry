@@ -29,10 +29,13 @@ namespace GeometryLib.Shapes
 
         public override string Print()
         {
+            return String.Format($"Triangle: sides: {Side1} {Side2} {Side3}, area = {GetArea()}");
+        }
+
+        public override double GetArea()
+        {
             var p = (Side1 + Side2 + Side3) / 2;
-            double area = 0;
-            area = Math.Sqrt(p * (p - Side1) * (p - Side2) * (p - Side3));
-            return String.Format($"Triangle: sides: {Side1} {Side2} {Side3}, area = {area}");
+            return Math.Sqrt(p * (p - Side1) * (p - Side2) * (p - Side3)); ;
         }
     }
 }
